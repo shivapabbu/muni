@@ -1,1 +1,26 @@
 /* Profile component styles */
+.profile {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.profile h3 {
+  color: #0078d4;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile p {
+  margin: 10px 0;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #0078d4;
+  border-radius: 4px;
+}
+
+.profile strong {
+  color: #323130;
+  font-weight: 500;
+}
