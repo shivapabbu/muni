@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <div class="card">
+      <div class="card-header">
+        <h3>Welcome to MSAL Angular Tutorial</h3>
+      </div>
+      <div class="card-body">
+        <p class="lead">This is a sample Angular application that demonstrates Microsoft Authentication Library (MSAL) integration.</p>
+        
+        <div *ngIf="!isLoggedIn()" class="text-center">
+          <p>Please sign in to access your profile.</p>
+          <button class="btn btn-primary btn-lg" (click)="login()">
+            Sign In
+          </button>
+        </div>
+        
+        <div *ngIf="isLoggedIn()" class="text-center">
+          <p>You are signed in! You can now access your profile.</p>
+          <a class="btn btn-success btn-lg me-2" routerLink="/profile">
+            View Profile
+          </a>
+          <button class="btn btn-secondary btn-lg" (click)="logout()">
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
