@@ -48,8 +48,7 @@ export function MSALInstanceFactory() {
 
 export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
   const protectedResourceMap = new Map<string, Array<string>>();
-  protectedResourceMap.set('https://graph.microsoft.com/v1.0/me', ['user.read']);
-
+  // No protected resources needed; app does not call Graph or any API
   return {
     interactionType: InteractionType.Redirect,
     protectedResourceMap

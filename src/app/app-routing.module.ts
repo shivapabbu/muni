@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 // Required for the Angular routing service
 import { Routes, RouterModule } from '@angular/router';
 // Required for the "Profile" page
-import { ProfileComponent } from './profile/profile.component';
+// import { ProfileComponent } from './profile/profile.component';
 // Required for the "Home" page
 import { HomeComponent } from './home/home.component';
 // MsalGuard is required to protect routes and require authentication before accessing protected routes
@@ -13,13 +13,7 @@ import { MsalGuard } from '@azure/msal-angular';
 // Specify MsalGuard on routes to be protected
 // '**' denotes a wild card
 const routes: Routes = [
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [
-      MsalGuard
-    ]
-  },
+  // Profile route removed; app shows static home only
   {
     path: '**',
     component: HomeComponent
