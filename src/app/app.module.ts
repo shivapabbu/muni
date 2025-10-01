@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 
 // MSAL imports
-import { MsalModule, MsalInterceptor, MsalGuard, MsalService, MsalBroadcastService, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG, MsalInterceptorConfiguration } from '@azure/msal-angular';
+import { MsalModule, MsalInterceptor, MsalGuard, MsalService, MsalBroadcastService, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG, MsalInterceptorConfiguration, MsalRedirectComponent } from '@azure/msal-angular';
 import { PublicClientApplication, InteractionType } from '@azure/msal-browser';
 
 // MSAL configuration
@@ -81,6 +81,6 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
     MsalGuard,
     MsalInterceptor
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, MsalRedirectComponent]
 })
 export class AppModule { }
