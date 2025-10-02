@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
 import { EventMessage, EventType, AuthenticationResult } from '@azure/msal-browser';
 import { filter } from 'rxjs/operators';
@@ -13,7 +14,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private authService: MsalService,
-    private msalBroadcastService: MsalBroadcastService
+    private msalBroadcastService: MsalBroadcastService,
+    private router: Router
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -41,6 +43,8 @@ export class AppComponent implements OnInit {
         const payload = result.payload as AuthenticationResult;
         this.authService.instance.setActiveAccount(payload.account);
         this.setLoginDisplay();
+        // Navigate to profile after successful login
+        this.router.navigate(['profile']);
       });
 
     this.msalBroadcastService.msalSubject$

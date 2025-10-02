@@ -5,7 +5,10 @@
     <button *ngIf="loginDisplay" class="btn btn-secondary" (click)="logout()">Sign Out</button>
   </div>
 </nav>
-<!-- Profile link removed -->
+<div class="profileButton">
+  <a [routerLink]="['profile']" class="btn btn-secondary" *ngIf="loginDisplay">Go to Profile</a>
+  <span *ngIf="!loginDisplay" class="text-muted" style="margin-left:8px;">Sign in to view your profile</span>
+</div>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
